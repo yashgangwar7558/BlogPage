@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm } from '../../components'
+import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../../components'
 import { getPosts, getPostDetails } from '../../sevices/index'
 import { useRouter } from 'next/router';
 
@@ -40,7 +40,7 @@ const PostDetails = ({ post }) => {
 
 export default PostDetails
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const posts = await getPosts();
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
