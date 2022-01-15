@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
 
 export default function Home({posts}) {
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div className="container mx-auto lg:px-10 md:px-5 px-2 mb-8">
       <Head>
         <title>BlogPage</title>
         <link rel="icon" href="/favicon.ico" />
